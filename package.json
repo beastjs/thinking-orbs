@@ -1,6 +1,6 @@
 {
   "name": "@beastjs/thinking-orbs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dotted thought-orb loading indicators for Octane and Beast — nine tuned states, two sizes, auto dark/light",
   "type": "module",
   "types": "./src/index.ts",

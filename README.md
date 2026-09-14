@@ -10,7 +10,7 @@ bun add @beastjs/thinking-orbs
 
 Octane libraries ship source: `octane` is a peer dependency, and your app's Octane compiler (e.g. `beastOctane()` from `beast-tsrx/vite`) compiles this package alongside your code. There is no build step.
 
-## Beast
+## Usage
 
 ```btsx
 import { ThinkingOrb } from "@beastjs/thinking-orbs";
@@ -18,47 +18,51 @@ import { ThinkingOrb } from "@beastjs/thinking-orbs";
 ThinkingOrb(state="searching" size={64})
 ```
 
-## TSRX / TSX
-
-```tsx
-import { ThinkingOrb } from '@beastjs/thinking-orbs';
-
-<ThinkingOrb state="searching" size={64} />;
-```
-
 ## States
 
 Nine verbs an agent can be doing, each a distinct animation:
 
-```tsx
-<ThinkingOrb state="working" />     {/* particles on tilted orbits */}
-<ThinkingOrb state="searching" />   {/* a scan meridian sweeps a dotted globe */}
-<ThinkingOrb state="solving" />     {/* bands scramble, then click back solved */}
-<ThinkingOrb state="listening" />   {/* a waveform rolls through the rings */}
-<ThinkingOrb state="connecting" />  {/* a constellation wires itself */}
-<ThinkingOrb state="weaving" />     {/* three strands plait around the sphere */}
-<ThinkingOrb state="composing" />   {/* an undulating multi-band sash */}
-<ThinkingOrb state="breathing" />   {/* a ring slowly morphing */}
-<ThinkingOrb state="shaping" />     {/* dotted outline: circle → triangle → square */}
+```btsx
+// particles on tilted orbits
+ThinkingOrb(state="working")
+// a scan meridian sweeps a dotted globe
+ThinkingOrb(state="searching")
+// bands scramble, then click back solved
+ThinkingOrb(state="solving")
+// a waveform rolls through the rings
+ThinkingOrb(state="listening")
+// a constellation wires itself
+ThinkingOrb(state="connecting")
+// three strands plait around the sphere
+ThinkingOrb(state="weaving")
+// an undulating multi-band sash
+ThinkingOrb(state="composing")
+// a ring slowly morphing
+ThinkingOrb(state="breathing")
+// dotted outline: circle → triangle → square
+ThinkingOrb(state="shaping")
 ```
 
 ## Sizes
 
 Two tuned presets — separate designs, not a scale factor. `64` for chat-avatar scale, `20` for inline-text scale. Each carries its own dot count, dot size and speed tuning:
 
-```tsx
-<ThinkingOrb state="working" size={64} />
-<ThinkingOrb state="working" size={20} />
+```btsx
+ThinkingOrb(state="working" size={64})
+ThinkingOrb(state="working" size={20})
 ```
 
 ## Theme
 
 Strictly monochrome — light ink for dark backgrounds, dark ink for light backgrounds — with the mode picked automatically from the host project:
 
-```tsx
-<ThinkingOrb theme="auto" />   {/* default — detects from the project */}
-<ThinkingOrb theme="dark" />   {/* pin: light dots for dark backgrounds */}
-<ThinkingOrb theme="light" />  {/* pin: dark dots for light backgrounds */}
+```btsx
+// default — detects from the project
+ThinkingOrb(theme="auto")
+// pin: light dots for dark backgrounds
+ThinkingOrb(theme="dark")
+// pin: dark dots for light backgrounds
+ThinkingOrb(theme="light")
 ```
 
 `auto` resolves in three layers and updates live when any of them change:
@@ -69,17 +73,21 @@ Strictly monochrome — light ink for dark backgrounds, dark ink for light backg
 
 ## Other props
 
-```tsx
-<ThinkingOrb
-  state="solving"
-  size={20}
-  speed={1.5}          // multiplier on the preset's baked speed
-  paused={false}       // freeze on the current frame
-  aria-label="Analysing repository…"  // overrides the per-state default
-/>
+```btsx
+ThinkingOrb(
+  ~ state="solving"
+  ~ size={20}
+  ~ speed={1.5}
+  ~ paused={false}
+  ~ aria-label="Analysing repository…"
+  ~ )
 ```
 
-All other `<canvas>` props (`className`, `style`, `data-*`, …) pass through.
+- `speed` multiplies the preset's baked speed.
+- `paused` freezes the current frame.
+- `aria-label` overrides the per-state default.
+
+All other canvas attributes (`class`, `style`, `data-*`, …) pass through.
 
 ## Accessibility & performance
 
@@ -90,4 +98,4 @@ All other `<canvas>` props (`className`, `style`, `data-*`, …) pass through.
 
 ## License
 
-MIT. Octane port of [thinking-orbs](https://github.com/Jakubantalik/thinking-orbs) by Jakub Antalik.
+MIT. Beast & Octane port of [thinking-orbs](https://github.com/Jakubantalik/thinking-orbs) by Jakub Antalik.

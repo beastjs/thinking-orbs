@@ -1,4 +1,4 @@
-import type { CSSProperties, CanvasHTMLAttributes } from 'react';
+import type { CSSProperties, CanvasHTMLAttributes } from 'react'
 
 /**
  * The nine shipped states — each a hand-tuned animation:
@@ -13,15 +13,7 @@ import type { CSSProperties, CanvasHTMLAttributes } from 'react';
  * - `shaping`    — a dotted outline morphs circle → triangle → square
  */
 export type OrbState =
-  | 'working'
-  | 'searching'
-  | 'solving'
-  | 'listening'
-  | 'connecting'
-  | 'weaving'
-  | 'composing'
-  | 'breathing'
-  | 'shaping';
+  'working' | 'searching' | 'solving' | 'listening' | 'connecting' | 'weaving' | 'composing' | 'breathing' | 'shaping'
 
 /**
  * Rendered size in CSS pixels. Exactly two tuned presets ship:
@@ -29,7 +21,7 @@ export type OrbState =
  * its own dot count, dot size and speed tuning — they are separate
  * designs, not a scale factor.
  */
-export type OrbSize = 64 | 20;
+export type OrbSize = 64 | 20
 
 /**
  * Theme mode.
@@ -47,27 +39,27 @@ export type OrbSize = 64 | 20;
  * Dark renders light ink on the transparent canvas (for dark
  * backgrounds); light renders dark ink (for light backgrounds).
  */
-export type OrbTheme = 'auto' | 'dark' | 'light';
+export type OrbTheme = 'auto' | 'dark' | 'light'
 
 /** Props for the ThinkingOrb React component. */
 export interface ThinkingOrbProps extends Omit<CanvasHTMLAttributes<HTMLCanvasElement>, 'style'> {
   /** Which animation to show. @default 'working' */
-  state?: OrbState;
+  state?: OrbState
 
   /** Tuned size preset — 64 or 20 CSS px. @default 64 */
-  size?: OrbSize;
+  size?: OrbSize
 
   /** Theme mode; `auto` detects from the host project. @default 'auto' */
-  theme?: OrbTheme;
+  theme?: OrbTheme
 
   /**
    * Animation speed multiplier on top of the preset's baked speed.
    * @default 1
    */
-  speed?: number;
+  speed?: number
 
   /** Freeze the animation on the current frame. @default false */
-  paused?: boolean;
+  paused?: boolean
 
-  style?: CSSProperties;
+  style?: CSSProperties
 }

@@ -1,0 +1,51 @@
+{
+  "name": "thinking-orbs-octane",
+  "version": "0.1.0",
+  "description": "Dotted thought-orb loading indicators for Octane — port of thinking-orbs",
+  "type": "module",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "octane": ">=0.2.6"
+  },
+  "dependencies": {
+    "thinking-orbs": "^0.3.1"
+  },
+  "devDependencies": {
+    "octane": "^0.2.10",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "octane",
+    "loading",
+    "loader",
+    "spinner",
+    "ai",
+    "agent",
+    "llm",
+    "canvas",
+    "animation",
+    "dark-mode"
+  ],
+  "author": "Jakub Antalik",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakubantalik/thinking-orbs.git",
+    "directory": "ports/octane/thinking-orbs-octane"
+  },
+  "homepage": "https://orbs.jakubantalik.com"
+}

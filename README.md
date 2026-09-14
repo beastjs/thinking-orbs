@@ -1,23 +1,29 @@
-# thinking-orbs
+# @beastjs/thinking-orbs
 
-Dotted thought-orb loading indicators for AI & agent UIs. Nine hand-tuned animated states, each shipped at two purpose-tuned sizes, rendered on a plain 2D canvas — no WebGL, no filters, works identically in Chrome, Safari and Firefox.
-
-[Live demo](https://orbs.jakubantalik.com) · [Repository](https://github.com/Jakubantalik/thinking-orbs) · [Report an issue](https://github.com/Jakubantalik/thinking-orbs/issues)
+Dotted thought-orb loading indicators for [Octane](https://octanejs.dev) and [Beast](https://beast-docs.vercel.app). Nine hand-tuned animated states, each shipped at two purpose-tuned sizes, rendered on a plain 2D canvas.
 
 ## Install
 
 ```bash
-npm install thinking-orbs
+bun add @beastjs/thinking-orbs
 ```
 
-## Quick start
+Octane libraries ship source: `octane` is a peer dependency, and your app's Octane compiler (e.g. `beastOctane()` from `beast-tsrx/vite`) compiles this package alongside your code. There is no build step.
+
+## Beast
+
+```btsx
+import { ThinkingOrb } from "@beastjs/thinking-orbs";
+
+ThinkingOrb(state="searching" size={64})
+```
+
+## TSRX / TSX
 
 ```tsx
-import { ThinkingOrb } from 'thinking-orbs';
+import { ThinkingOrb } from '@beastjs/thinking-orbs';
 
-function Status() {
-  return <ThinkingOrb state="searching" size={64} />;
-}
+<ThinkingOrb state="searching" size={64} />;
 ```
 
 ## States
@@ -84,4 +90,4 @@ All other `<canvas>` props (`className`, `style`, `data-*`, …) pass through.
 
 ## License
 
-MIT © Jakub Antalik
+MIT. Octane port of [thinking-orbs](https://github.com/Jakubantalik/thinking-orbs) by Jakub Antalik.

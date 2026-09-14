@@ -1,9 +1,0 @@
-src
-demo
-node_modules
-*.log
-.DS_Store
-tsconfig*.json
-vite.config.ts
-.gitignore
-.github

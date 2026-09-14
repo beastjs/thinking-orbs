@@ -11,12 +11,7 @@ import { frameOrbits } from './orbits';
 import { frameRibbon } from './ribbon';
 import { frameWeb } from './web';
 
-/**
- * The portable surface: pure geometry, no canvas. The React Native port
- * imports exactly these functions, so its output is identical to the web's
- * by construction rather than by re-implementation.
- */
-export const MODE_FRAMES: Record<ModeKey, ModeFrame> = {
+const MODE_FRAMES: Record<ModeKey, ModeFrame> = {
   orbits: frameOrbits,
   globe: frameGlobe,
   rubik: frameRubik,
@@ -29,8 +24,8 @@ export const MODE_FRAMES: Record<ModeKey, ModeFrame> = {
   morph: frameMorph
 };
 
-/** Canvas painters, derived from the geometry. The 2D-canvas binding. */
-export const MODE_DRAWS: Record<ModeKey, ModeDraw> = Object.fromEntries(
+/** Canvas painters, derived from the geometry. */
+export const MODE_DRAWS = Object.fromEntries(
   Object.entries(MODE_FRAMES).map(([key, frame]) => [
     key,
     ((ctx, size, t, dark, opts) => paintFrame(ctx, frame(size, t, opts), dark)) as ModeDraw

@@ -102,7 +102,7 @@ export function makeProj(yaw: number, tilt: number, cx: number, cy: number, scal
  * ink value is mirrored (1 - white) so near dots read bright — the same
  * depth language on an inverted substrate.
  */
-export function paint(ctx: CanvasRenderingContext2D, dots: Dot[], dark: boolean, rMin = 0.3): void {
+export function paint(ctx: CanvasRenderingContext2D, dots: Dot[], dark: boolean): void {
   for (const d of dots) {
     const alpha = d.a ?? 1;
     const w = Math.min(1, Math.max(0, d.white));
@@ -135,9 +135,7 @@ export function paintLines(ctx: CanvasRenderingContext2D, lines: Line[], dark: b
  *
  * This runs in the GEOMETRY step, not the painter, so a frame is a complete
  * set of draw instructions: every value is final and the array order is the
- * order to draw in. That is what lets the RN and SwiftUI ports share this
- * output verbatim — a port draws the list, it never re-derives anything —
- * and what lets the golden-vector tests compare numbers instead of pixels.
+ * order to draw in.
  */
 export function finalizeFrame(dots: Dot[], lines: Line[], rMin = 0.3): OrbFrame {
   const visible: Dot[] = [];

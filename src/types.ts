@@ -1,4 +1,4 @@
-import type { CSSProperties, CanvasHTMLAttributes } from 'react'
+import type { CSSProperties, CanvasHTMLAttributes } from 'octane'
 
 /**
  * The nine shipped states — each a hand-tuned animation:
@@ -41,7 +41,7 @@ export type OrbSize = 64 | 20
  */
 export type OrbTheme = 'auto' | 'dark' | 'light'
 
-/** Props for the ThinkingOrb React component. */
+/** Props for the ThinkingOrb Octane component. */
 export interface ThinkingOrbProps extends Omit<CanvasHTMLAttributes<HTMLCanvasElement>, 'style'> {
   /** Which animation to show. @default 'working' */
   state?: OrbState

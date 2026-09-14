@@ -23,13 +23,9 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
-      - run: npm ci
-
-      - run: npm run build
-
-      # Publish; --access public is required for unscoped packages on a
-      # personal account. The ORBS secret must be an npm "Automation" token
-      # with publish rights to the thinking-orbs package.
+      # Source-only package: nothing to install or build. --access public is
+      # required for scoped packages. ORBS must be a Granular Access token
+      # with publish rights to the @beastjs org.
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ORBS }}
